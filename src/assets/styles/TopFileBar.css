@@ -1,0 +1,242 @@
+.top-file-bar {
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  
+  
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .file-menu,
+  .settings-menu {
+    position: relative;
+
+    .file-menu-button {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #495057;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 123, 255, 0.1);
+        border-color: rgba(0, 123, 255, 0.2);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .file-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+      z-index: 1001;
+      animation: dropdownSlide 0.15s ease-out;
+
+      .file-dropdown-group {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+
+        .file-dropdown-item {
+          width: 100%;
+          background: transparent;
+          border: none;
+          padding: 8px 10px 8px 30px;
+          text-align: left;
+          cursor: pointer;
+          font-size: 13px;
+          color: #495057;
+          transition: background-color 0.2s ease;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:hover {
+            background: #f8f9fa;
+
+            .menu-shortcut {
+              color: #495057;
+            }
+          }
+
+          &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+          }
+          .menu-text {
+            flex: 1;
+            text-align: left;
+            font-weight: 600; /* Medium weight instead of 600 */
+            color: #495057; /* Lighter than #212529 */
+            font-size: 13px; /* Smaller than 14px */
+          }
+
+          .menu-shortcut {
+            font-size: 11px;
+            color: #868e96; /* Darker than #adb5bd */
+            margin-left: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            transition: color 0.2s ease;
+            font-weight: 400;
+
+            &:hover {
+              color: #6c757d; /* Darker on hover */
+            }
+          }
+
+          .dropdown-separator {
+            height: 1px;
+            background: #dee2e6;
+            margin: 4px 0;
+          }
+
+          &.currency-selector {
+            position: relative;
+            
+            .currency-submenu {
+              position: absolute;
+              left: 84%;
+              top: 0;
+              background: white;
+              border: 1px solid #dee2e6;
+              border-radius: 4px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              min-width: 200px;
+              z-index: 1002;
+              animation: submenuSlide 0.15s ease-out;
+
+              .currency-item {
+                width: 100%;
+                background: transparent;
+                border: none;
+                padding: 8px 12px;
+                text-align: left;
+                cursor: pointer;
+                font-size: 13px;
+                color: #495057;
+                transition: background-color 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &:hover {
+                  background: #f8f9fa;
+                }
+
+                &.selected {
+                  background: rgba(0, 123, 255, 0.1);
+                  color: #007bff;
+                  
+                  .currency-symbol,
+                  .currency-code {
+                    color: #007bff;
+                    font-weight: 600;
+                  }
+                }
+
+                .currency-symbol {
+                  font-weight: 600;
+                  width: 20px;
+                  text-align: center;
+                }
+
+                .currency-code {
+                  font-weight: 600;
+                  width: 40px;
+                }
+
+                .currency-name {
+                  flex: 1;
+                  font-size: 12px;
+                  color: #6c757d;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .file-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+
+    .status-indicator {
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+
+      &.connected {
+        background: rgba(40, 167, 69, 0.1);
+        color: #28a745;
+      }
+
+      &.new {
+        background: rgba(255, 193, 7, 0.1);
+        color: #ffc107;
+      }
+    }
+
+    .shortcut-hint {
+      color: #6c757d;
+      font-style: italic;
+    }
+  }
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes submenuSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

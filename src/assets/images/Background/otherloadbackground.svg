@@ -1,0 +1,20 @@
+<svg width="487" height="491" viewBox="0 0 487 491" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 78.6071H268.091V19.1292H354.761L480 53.9059V78.6071Z" stroke="#E5E5E5" stroke-width="13.1509"/>
+<rect x="244.32" y="40.8897" width="53.4379" height="279.709" transform="rotate(27 244.32 40.8897)" fill="white" stroke="#E5E5E5" stroke-width="17.933"/>
+<mask id="path-3-inside-1_1952_2429" fill="white">
+<path d="M0 450.193C0 444.334 4.74992 439.584 10.6092 439.584H259.573C265.432 439.584 270.182 444.334 270.182 450.193V490.862H0V450.193Z"/>
+</mask>
+<path d="M0 450.193C0 444.334 4.74992 439.584 10.6092 439.584H259.573C265.432 439.584 270.182 444.334 270.182 450.193V490.862H0V450.193Z" fill="white" stroke="#E5E5E5" stroke-width="28.5934" mask="url(#path-3-inside-1_1952_2429)"/>
+<rect x="40.5589" y="412.346" width="190.613" height="30.0595" fill="white" stroke="#E5E5E5" stroke-width="21.2185"/>
+<mask id="path-5-inside-2_1952_2429" fill="white">
+<path d="M29.9497 331.362C29.9497 282.144 69.849 242.245 119.067 242.245H232.94C237.822 242.245 241.781 246.203 241.781 251.086V411.639C241.781 416.521 237.822 420.48 232.94 420.48H38.7907C33.908 420.48 29.9497 416.521 29.9497 411.639V331.362Z"/>
+</mask>
+<path d="M29.9497 331.362C29.9497 282.144 69.849 242.245 119.067 242.245H232.94C237.822 242.245 241.781 246.203 241.781 251.086V411.639C241.781 416.521 237.822 420.48 232.94 420.48H38.7907C33.908 420.48 29.9497 416.521 29.9497 411.639V331.362Z" fill="white" stroke="#E5E5E5" stroke-width="30.4131" mask="url(#path-5-inside-2_1952_2429)"/>
+<circle cx="136.045" cy="331.364" r="60.1789" fill="white" stroke="#E5E5E5" stroke-width="14.7377"/>
+<circle cx="273.322" cy="48.8675" r="43.5365" fill="white" stroke="#E5E5E5" stroke-width="10.662"/>
+<circle cx="135.553" cy="331.364" r="29.3721" fill="white" stroke="#E5E5E5" stroke-width="14.9442"/>
+<circle cx="272.967" cy="48.8679" r="21.2493" fill="white" stroke="#E5E5E5" stroke-width="10.8114"/>
+<path d="M440.883 85.2275V250.024" stroke="#E5E5E5" stroke-width="15.51"/>
+<circle cx="442.119" cy="283.797" r="19.6007" fill="white" stroke="#E5E5E5" stroke-width="10.662"/>
+<path d="M479.252 250.025H405.341V296.352L426.913 339.319H459.802L479.252 296.352V250.025Z" stroke="#E5E5E5" stroke-width="9.19467"/>
+</svg>

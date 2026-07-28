@@ -1,0 +1,626 @@
+/* Main navigation buttons */
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.nav-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #2b6cb0;
+}
+
+.nav-button.active {
+  background-color: #2b6cb0;
+}
+
+/* Main layout */
+.homePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mainContentContainer {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Header section */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  z-index: 10;
+}
+
+.headerTitle {
+  padding-top: 80px;
+  padding-left: 20px;
+  font-size: 25px;
+  margin: 0;
+  color: #333;
+  font-weight: normal; 
+  font-family: 'Roboto Condensed', sans-serif; /* Add this line */
+
+ 
+}
+
+.createShipButton {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 45px;
+  border: 1.5px solid #000000; /* Add a subtle border */
+  padding: 5px 35px 5px 20px; /* Increase padding for larger size */
+  text-align: left;
+  border-radius: 10px; /* Make it more rounded/pill-shaped */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.2s;
+  min-width: 120px; /* Set minimum width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  
+
+}
+
+.createShipButton:hover {
+  background-color: #ececec;
+}
+
+/* Sidebar navigation */
+.sidebarNav {
+  width: 250px;
+  background-color: #D9D9D9;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  overflow-y: auto;
+}
+
+.sidebarButton {
+  text-align: left;
+  padding: 12px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000000;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.sidebarButton:hover {
+  background-color: #c8c8c8;
+}
+
+.sidebarButton.active {
+  background-color: #bababa;
+  border-left: 3px solid #ba0000;
+  color: #000000;
+}
+
+/* Dropdown menu in sidebar */
+.sidebarDropdown {
+  position: relative;
+  width: 100%;
+}
+
+.sidebarDropdown .sidebarButton {
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000000;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.sidebarDropdown .sidebarButton:hover {
+  background-color: #c8c8c8;
+  width: 100%;
+}
+
+.sidebarDropdownContent {
+  display: none;
+  background-color: #D9D9D9;
+  
+  width: 100%;
+}
+
+.sidebarDropdown.open .sidebarDropdownContent {
+  display: block;
+}
+
+
+
+.categoryButton {
+  background-color: #D9D9D9;
+  width: 100%;
+  text-align: left;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+
+.categoryButton:hover {
+  background-color: #c8c8c8;
+}
+
+.categoryButton:after {
+  content: '\25BC';
+  font-size: 10px;
+  transition: transform 0.3s;
+}
+
+.categoryItem.open .categoryButton:after {
+  transform: rotate(180deg);
+}
+
+.componentTypes {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: white;
+}
+
+.categoryItem.open .componentTypes {
+  max-height: 500px;
+}
+
+.typeButton {
+  width: 100%;
+  text-align: left;
+  padding: 8px 45px;
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.typeButton:hover {
+  background-color: #c8c8c8;
+}
+
+.typeButton.active {
+  background-color: #bababa;
+  border-left: 3px solid #ba0000;
+  color: #000000;
+}
+
+/* Content area */
+.contentArea {
+  background-color: #F4F4F4;
+  flex: 1;
+  padding: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  
+}
+
+/* Output container */
+.outputContainer {
+  background-color: #F4F4F4;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.outputContainer h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.contentWrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.outputData {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
+  column-gap: 20px;
+  overflow-y: auto;
+  align-content: flex-start;
+  padding-right: 10px;
+}
+
+.outputDataItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  width: 49.5%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.outputDataItem:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+}
+
+.outputDataItem p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+/* Actions */
+.shipActions, .componentActions {
+  display: flex;
+  gap: 10px;
+}
+
+.editButton, .deleteButton, .createButton {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.editButton {
+  background-color: #4285f4;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #2b6cb0;
+}
+
+.deleteButton {
+  background-color: #ea4335;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c62828;
+}
+
+.deleteButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.createButton {
+  background-color: #040469;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Make it pill-shaped */
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(152, 152, 152, 0.3); /* Add shadow with button color */
+  transition: all 0.2s ease;
+  margin-top: 0;
+  margin-left: 20px;
+  min-width: 120px;
+}
+
+.createButton:hover {
+  background-color: #040469;
+  box-shadow: 0 6px 16px rgba(128, 128, 128, 0.4); /* Stronger shadow on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Component details */
+.component-details {
+  width: 100%;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.saved-component-item {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.saved-component-item h3 {
+  margin-top: 0;
+  margin-bottom: 3px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-component-item p {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.saved-component-item .component-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+/* Updated component header styling */
+.componentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  max-height: calc(100vh - 200px); /* Limit the table height */
+
+}
+
+/* Component Table Styles */
+.componentTable {
+  width: 100%;
+
+  background: #F4F4F4;
+  
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px 100px 100px 100px;
+  background: #F4F4F4;
+  border-bottom: 2px solid #c5c5c5;
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.tableHeaderCell {
+  padding: 8px 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableHeaderCell:first-child {
+  text-align: center;
+}
+
+.tableHeaderCell:nth-child(2) {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.tableBody {
+  background: #F4F4F4;
+  max-height: calc(100vh - 280px); /* Set maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  
+}
+
+.tableRow {
+  display: grid;
+  padding: 2px 6px;
+  grid-template-columns: 50px 1fr 100px 100px 100px 100px;
+  transition: background-color 0.2s;
+}
+
+.tableRow:hover {
+  background-color: #f8f9fa;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  padding: 2px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.tableCell:first-child {
+  font-weight: 600;
+  color: #666;
+  justify-content: center;
+}
+
+.tableCell:nth-child(2) {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.tableCell:last-child {
+  border-right: none;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  background-color: #f0f0f0;
+}
+
+.iconButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Update the red bar */
+.redBar {
+  width: 60px;
+  height: 8px;
+  background-color: #FF0000;
+  margin-bottom: 10px;
+}
+
+/* Update component header */
+.componentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.componentHeader h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.componentHeader .createButton {
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+/* Error message */
+.errorMessage {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Loading state */
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #333;
+}
+.pdfContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdfControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.pdfButton {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pdfButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-weight: 600;
+  color: #333;
+}
+
+.pdfViewer {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.pdfIframe {
+  border: none;
+  border-radius: 8px;
+}
+
+.downloadButton {
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}

@@ -1,0 +1,7 @@
+:root {
+  --top-bar-height: 36px;
+}
+
+body {
+  overflow: auto;
+}

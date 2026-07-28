@@ -1,0 +1,93 @@
+/* Main container */
+.ship-continue-content {
+    padding: 20px;
+}
+
+/* Title */
+.ship-continue-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Grid layout */
+.ship-continue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Ship card */
+.ship-continue-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+}
+
+.ship-continue-card-title {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.ship-continue-card-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Button container */
+.ship-continue-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Continue button */
+.ship-continue-button {
+    flex: 1;
+    padding: 8px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ship-continue-button:hover {
+    background: #0056b3;
+}
+
+/* Delete button */
+.ship-continue-delete {
+    flex: 1;
+    padding: 8px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ship-continue-delete:hover {
+    background: #c82333;
+}
+
+.ship-continue-delete:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Empty state */
+.ship-continue-empty {
+    text-align: center;
+    color: #666;
+    grid-column: 1 / -1;
+    padding: 20px;
+}

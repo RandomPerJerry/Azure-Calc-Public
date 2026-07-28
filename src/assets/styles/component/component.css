@@ -1,0 +1,6 @@
+/* Import base layout */
+@import './layout-base.css';
+
+/* Import panel-specific styles */
+@import './left-panel.css';
+@import './right-panel.css';

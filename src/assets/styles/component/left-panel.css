@@ -1,0 +1,436 @@
+.components-layout .left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+  background: #f6f3f3;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Add this to make form take full height */
+  form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; /* Add this */
+  }
+
+  h2 {
+    position: relative;
+    padding-top: 15px;
+    margin: 0 0 20px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 10px;
+      background: red;
+    }
+  }
+
+  .mode-select {
+    display: inline-flex;
+    align-self: flex-start;
+    background: #f1f3f4;
+    border-radius: 20px;
+    padding: 3px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 4px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #6c757d;
+      border-radius: 17px;
+      transition: all 0.2s ease;
+
+      &.active {
+        background: white;
+        color: black;
+        font-weight: 300;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .input-field {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    /* Base input styling for all inputs in input-field */
+    input {
+      width: 100%; /* Default width for all inputs */
+      padding: 0.35rem 1rem;
+      border: 1.5px solid black;
+      border-radius: 11px;
+      font-size: 14px;
+      background-color: white;
+      line-height: 1.1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      all: revert !important; /* Reset ALL properties to browser defaults */
+      margin-right: 8px !important; /* Only keep spacing */
+      cursor: pointer !important; /* Only keep cursor */
+      accent-color: #007bff !important; /* Only keep brand color */
+      all: revert !important; /* Reset ALL properties to browser defaults */
+      margin-right: 8px !important; /* Only keep spacing */
+      cursor: pointer !important; /* Only keep cursor */
+      accent-color: #007bff !important; /* Only keep brand color */
+    }
+
+    .data-input {
+      margin-bottom: 24px;
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #495057;
+        font-size: 14px;
+      }
+
+      &.string input {
+        width: 100%;
+      }
+
+      &.number input {
+        width: 25%;
+      }
+
+      .field-group &.string input,
+      .field-group &.number input {
+        width: 100%; /* All inputs in field-group take full width */
+      }
+    }
+
+    /* Grouped fields container */
+    .field-group {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+
+      .data-input {
+        flex: 1;
+        margin-bottom: 0;
+      }
+    }
+
+    select {
+      border: 1.5px solid black;
+      padding: 8px 12px;
+      background-color: white;
+      border-radius: 13px;
+      margin-bottom: 20px;
+      width: 80%;
+    }
+
+    .layout-configuration {
+      .placement-controls {
+        input {
+          /* Reset to default browser behavior */
+          width: auto !important;
+          height: auto !important;
+          padding: initial !important;
+          border: initial !important;
+          border-radius: initial !important;
+          font-size: initial !important;
+          background-color: initial !important;
+          line-height: initial !important;
+          box-shadow: none !important;
+
+          /* Keep some basic styling */
+          margin-right: 8px;
+          cursor: pointer;
+
+          /* For radio buttons specifically */
+          &[type="radio"] {
+            accent-color: #007bff;
+          }
+        }
+      }
+    }
+
+    .data-points-container {
+      margin-top: 8px;
+
+      .data-point-row {
+        margin-bottom: 16px;
+
+        .data-point-inputs {
+          display: flex;
+          gap: 16px;
+          align-items: end;
+
+          .input-group {
+            flex: 1;
+          }
+
+          .remove-btn {
+            padding: 8px 10px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: fit-content;
+
+            &:hover {
+              background: #c82333;
+            }
+          }
+        }
+      }
+
+      .add-btn {
+        width: 100%;
+        padding: 12px 16px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-top: 8px;
+
+        &:hover {
+          background: #218838;
+        }
+      }
+    }
+
+    .component-selection {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #495057;
+        font-size: 14px;
+      }
+
+      .selected-component {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border: 2px solid #28a745;
+        border-radius: 8px;
+        background: #d4edda;
+        margin-bottom: 16px;
+
+        span {
+          font-weight: 500;
+          color: #155724;
+          flex: 1;
+        }
+
+        .change-btn {
+          padding: 6px 12px;
+          background: #007bff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #0056b3;
+          }
+        }
+      }
+
+      .select-btn {
+        width: 100%;
+        padding: 12px 16px;
+        background: white;
+        color: #6c757d;
+        border: 2px dashed #dee2e6;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #f8f9fa;
+          border-color: #007bff;
+          color: #007bff;
+          border-style: solid;
+        }
+      }
+    }
+  }
+
+  .form-actions {
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+    display: flex;
+    gap: 12px;
+
+    .submit-btn,
+    .cancel-btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .submit-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+
+      &:hover {
+        background: #0056b3;
+      }
+
+      &:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+      }
+    }
+
+    .cancel-btn {
+      background: #f8f9fa;
+      color: #6c757d;
+      border: 1px solid #dee2e6;
+
+      &:hover {
+        background: #e9ecef;
+        color: #495057;
+      }
+    }
+  }
+
+  .component-list {
+    padding: 20px 0;
+    overflow: auto;
+
+    .component-list-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 8px;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      background: white;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+        background: #f8f9fa;
+        border-color: #007bff;
+      }
+
+      &.selected {
+        background: #e3f2fd;
+        border-color: #007bff;
+        box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+      }
+
+      .radio-indicator {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #dee2e6;
+        border-radius: 50%;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .radio-dot {
+          width: 8px;
+          height: 8px;
+          background: #007bff;
+          border-radius: 50%;
+        }
+      }
+
+      .component-label {
+        flex: 1;
+        font-weight: 500;
+        color: #495057;
+
+        .version-tag {
+          font-size: 12px;
+          font-weight: 400;
+          color: #6c757d;
+          background: #e9ecef;
+          padding: 2px 6px;
+          border-radius: 4px;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+  .back-action {
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+    .back-btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #f8f9fa;
+      color: #6c757d;
+      border: 1px solid #dee2e6;
+
+      &:hover {
+        background: #e9ecef;
+        color: #495057;
+      }
+    }
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: "⚠";
+      font-size: 14px;
+    }
+  }
+}

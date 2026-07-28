@@ -1,0 +1,262 @@
+@import './system-edit.css';
+
+.base-layout .system {
+  display: contents;
+
+  .general-system-display {
+    display: contents;
+
+    .left-panel {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      
+      h2 {
+        position: relative;
+        padding-top: 15px;
+        margin: 0 0 20px 0;
+        font-size: 30px;
+        font-weight: normal;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 60px;
+          height: 10px;
+          background: red;
+        }
+      }
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .system-block {
+          h3 {
+            text-align: center;
+            border-bottom: 2px solid black;
+          }
+          .system-button-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: space-evenly; 
+            align-items: start;
+            width: 100%;
+
+            .system-button-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              flex: 1;
+
+              .system-icon-button {
+                width: 4rem;
+                height: 4rem;
+                border: 2px solid #333;
+                border-radius: 50%; 
+                background: white;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                border-color: #888888;
+
+                &.producing {
+                  box-shadow: 0 0 0 3px #888888, 0 0 0 6px #28FF01;
+                }
+
+                &.consumption {
+                  box-shadow: 0 0 0 3px #888888, 0 0 0 6px #ff0000;
+                }
+
+                img {
+                  width: 80%;
+                  height: 80%;
+                  object-fit: contain;
+                }
+              }
+
+              .system-button-label {
+                margin-top: 8px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #333;
+                text-align: center;
+                line-height: 1.2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .specific-system-display {
+    display: contents;
+
+    .left-panel {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background-color: #f6f3f3;
+
+      h2 {
+        position: relative;
+        padding-top: 15px;
+        margin: 0 0 20px 0;
+        font-size: 30px;
+        font-weight: normal;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 60px;
+          height: 10px;
+          background: red;
+        }
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .new-button {
+          background: #007bff;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          padding: 10px 16px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 500;
+          transition: background-color 0.2s ease;
+          white-space: nowrap;
+
+          &:hover {
+            background: #0056b3;
+          }
+
+          .arrow-icon {
+            margin-right: 8px;
+          }
+        }
+      }
+
+      .warning-message {
+        margin-bottom: 16px;
+
+        .warning-text {
+          color: orange;
+          font-style: italic;
+          margin: 0;
+        }
+      }
+
+      .no-systems-message {
+        text-align: center;
+        color: #666;
+        font-style: italic;
+        margin: 40px 0;
+      }
+
+      .systems-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 16px;
+        table-layout: fixed;        /* ← Force fixed layout */
+        
+        th,
+        td {
+          padding: 8px 4px;         /* ← Reduce padding */
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+          overflow: hidden;         /* ← Hide overflow */
+          text-overflow: ellipsis;  /* ← Add ... for long text */
+          white-space: nowrap;      /* ← Prevent text wrapping */
+        }
+
+        th {
+          font-weight: 600;
+          color: #666;
+          font-size: 12px;          /* ← Smaller font */
+        }
+
+        /* Set specific column widths */
+        .description-header,
+        .description-cell {
+          width: 30%;              /* ← Keep description same */
+        }
+
+        .power-header,
+        .power-cell {
+          width: 20%;              /* ← Increase from 15% to 20% */
+        }
+
+        .bus-bar-header,
+        .bus-bar-cell {
+          width: 30%;              /* ← Increase from 25% to 30% */
+        }
+
+        .edit-header,
+        .edit-cell {
+          width: 10%;              /* ← Decrease from 15% to 10% */
+        }
+
+        .remove-header,
+        .remove-cell {
+          width: 10%;              /* ← Decrease from 15% to 10% */
+        }
+
+        .bus-bar-checkboxes {
+          display: flex;
+          align-items: center;
+
+          .bus-bar-label {
+            color: gray;
+            font-weight: 500;
+            font-size: 12px;        /* ← Smaller font */
+          }
+
+          .configure-message {
+            color: gray;
+            font-size: 10px;        /* ← Smaller font */
+          }
+        }
+
+        .edit-icon-btn,
+        .remove-icon-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 2px;            /* ← Smaller padding */
+          border-radius: 4px;
+          transition: background-color 0.2s ease;
+
+          img {
+            width: 15px;           /* ← Smaller icons */
+            height: 15px;
+          }
+        }
+        .edit-icon-btn:hover {
+          background-color: #e3f2fd;
+        }
+
+        .remove-icon-btn:hover {
+          background-color: #ffebee;
+        }
+      }
+    }
+    
+  }
+}
+
+

@@ -1,0 +1,23 @@
+.components-layout,
+.components-layout *,
+.components-layout *::before,
+.components-layout *::after {
+  box-sizing: border-box;
+}
+
+/* Container creates the background */
+.components-layout {
+  min-height: 100%;
+  background: #e9ecef;
+  padding: 2vw;
+  
+  .page {
+    display: flex;
+    height: calc(100vh - 4vw - var(--top-bar-height));
+    gap: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6;
+  }
+}

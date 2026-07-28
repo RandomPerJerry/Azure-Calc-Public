@@ -1,0 +1,438 @@
+@import "../working-display.css";
+
+.base-layout .working-condition {
+  display: contents;
+
+  .working-condition-data-points {
+    display: contents;
+    .left-panel {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        position: relative;
+        padding-top: 15px;
+        margin: 0 0 20px 0;
+        font-size: 30px;
+        font-weight: normal;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 60px;
+          height: 10px;
+          background: red;
+        }
+      }
+
+      .route-tabs {
+        display: flex;
+        width: calc(20% + (var(--button-count) * 16%));
+        background: #f1f3f4;
+        border-radius: 20px;
+        padding: 3px;
+        border: 2px solid black;
+
+        button {
+          flex: 1;
+          background: none;
+          border: none;
+          padding: 4px 8px;
+          cursor: pointer;
+          font-size: 14px;
+          color: #6c757d;
+          border-radius: 17px;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          min-height: 0;
+
+          &.active {
+            background: white;
+            color: black;
+            font-weight: 300;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+
+          &:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        border-top: 2px solid black;
+        padding: 1rem 0;
+        flex: 1;
+        min-height: 0;
+
+        input {
+          width: 100%;
+          padding: 0.35rem 1rem;
+          border: 1.5px solid black;
+          border-radius: 11px;
+          font-size: 14px;
+          background-color: white;
+          line-height: 1.1;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+          }
+        }
+        .full-datapoint {
+          overflow-y: auto;
+          min-height: 0;
+          flex: 1;
+          overflow-y: auto;
+          min-height: 0;
+          padding-right: 8px;
+          margin-top: 1rem;
+
+          .data-point {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s ease;
+
+            &:hover {
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .data-point-input {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 8px 16px;
+              margin-bottom: 12px;
+
+              label {
+                font-weight: 600;
+                color: #333;
+                font-size: 14px;
+              }
+            }
+
+            .edit-tools {
+              display: flex;
+              justify-content: flex-end;
+              gap: 8px;
+              margin-bottom: 8px;
+
+              button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 24px;
+                padding: 8px;
+                color: #666;
+                transition: color 0.2s ease;
+
+                &:hover {
+                  color: #333;
+                }
+              }
+            }
+
+            .error-display {
+              background: #fff3cd;
+              border: 1px solid #ffeaa7;
+              border-radius: 8px;
+              padding: 12px;
+
+              .error-item {
+                margin-bottom: 4px;
+                font-size: 14px;
+                color: #664d03;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                strong {
+                  color: #856404;
+                }
+              }
+            }
+          }
+        }
+
+        .form-action {
+          padding-top: 20px;
+          border-top: 1px solid #dee2e6;
+          margin-top: auto;
+          display: flex;
+          gap: 12px;
+        }
+      }
+    }
+
+    .right-panel {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .graph-container {
+        width: 100%;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+
+        .energy-graphs-container {
+          width: 100%;
+          max-width: 80rem; /* Limit max width */
+          display: flex;
+          flex-direction: row;
+          gap: 2rem;
+          align-items: center;
+
+          .graph-item {
+            width: 100%;
+            height: 25rem; /* Fixed height for each graph */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+
+          /* When you have an odd number of graphs, center the last one */
+          .graph-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            max-width: 35rem;
+            margin: 0 auto;
+          }
+        }
+
+        .loading-message {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          color: #6c757d;
+          height: 20rem;
+        }
+      }
+    }
+  }
+
+  .distribution-diagram {
+    display: contents;
+
+    .left-panel {
+      overflow-y: auto; /* ← Add scrolling if content overflows */
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      background: #f6f3f3;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      h1 {
+        position: relative;
+        padding-top: 15px;
+        margin: 0 0 20px 0;
+        font-size: 24px;
+        font-weight: normal;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 60px;
+          height: 10px;
+          background: red;
+        }
+
+        button {
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: #666;
+          padding: 4px 8px;
+          border-radius: 4px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #e9ecef;
+            color: #333;
+          }
+        }
+      }
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 1rem;
+        overflow-y: auto;
+
+        label {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: 600;
+          color: #495057;
+          font-size: 14px;
+        }
+
+        /* Base input styling */
+        input[type="number"],
+        input[type="text"] {
+          width: 100%;
+          padding: 0.35rem 1rem;
+          border: 1.5px solid black;
+          border-radius: 11px;
+          font-size: 14px;
+          background-color: white;
+          line-height: 1.1;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          margin-bottom: 16px;
+
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+          }
+        }
+
+        /* Data input containers */
+        .data-input {
+          margin-bottom: 24px;
+
+          &.number input {
+            width: 60%;
+          }
+        }
+
+        /* Table Styling */
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 16px;
+          border-radius: 8px;
+          overflow: hidden;
+
+          th {
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 14px;
+            overflow: hidden; /* ← Hide overflow */
+            text-overflow: ellipsis; /* ← Add ... for long text */
+            white-space: nowrap;
+          }
+
+          td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 14px;
+            overflow: hidden; /* ← Hide overflow */
+            text-overflow: ellipsis; /* ← Add ... for long text */
+            white-space: nowrap;
+          }
+
+          tbody tr {
+            &:last-child td {
+              border-bottom: none;
+            }
+          }
+        }
+
+        .button-group {
+          display: flex;
+          background: #f1f3f4;
+          border-radius: 20px;
+          padding: 3px;
+          border: 2px solid black;
+          margin-top: 8px;
+          width: 100%;
+
+          button {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #6c757d;
+            border-radius: 17px;
+            transition: all 0.2s ease;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.active {
+              background: white;
+              color: black;
+              font-weight: 300;
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+
+      .form-action {
+        padding-top: 20px;
+        border-top: 1px solid #dee2e6;
+        margin-top: auto;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          padding: 12px 24px;
+          border-radius: 6px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          background: #f8f9fa;
+          color: #6c757d;
+          border: 1px solid #dee2e6;
+
+          &:hover {
+            background: #e9ecef;
+            color: #495057;
+          }
+        }
+      }
+
+      /* Form Elements */
+    }
+  }
+}
+

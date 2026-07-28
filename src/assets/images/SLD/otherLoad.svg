@@ -1,0 +1,20 @@
+<svg width="980" height="690" viewBox="0 0 980 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M970.185 110.357H672.684V26.855H794.361L970.185 75.6784V110.357Z" stroke="black" stroke-width="18.4627"/>
+<rect x="639.314" y="57.4047" width="75.0221" height="392.686" transform="rotate(27 639.314 57.4047)" fill="white" stroke="black" stroke-width="25.1764"/>
+<mask id="path-3-inside-1_2245_198" fill="white">
+<path d="M296.308 632.032C296.308 623.806 302.976 617.137 311.202 617.137H660.725C668.951 617.137 675.619 623.806 675.619 632.032V689.127H296.308V632.032Z"/>
+</mask>
+<path d="M296.308 632.032C296.308 623.806 302.976 617.137 311.202 617.137H660.725C668.951 617.137 675.619 623.806 675.619 632.032V689.127H296.308V632.032Z" fill="white" stroke="black" stroke-width="40.1426" mask="url(#path-3-inside-1_2245_198)"/>
+<rect x="353.251" y="578.897" width="267.603" height="42.2009" fill="white" stroke="black" stroke-width="29.7888"/>
+<mask id="path-5-inside-2_2245_198" fill="white">
+<path d="M338.357 465.203C338.357 396.105 394.372 340.09 463.47 340.09H623.337C630.192 340.09 635.749 345.647 635.749 352.502V577.904C635.749 584.759 630.192 590.316 623.337 590.316H350.769C343.914 590.316 338.357 584.759 338.357 577.904V465.203Z"/>
+</mask>
+<path d="M338.357 465.203C338.357 396.105 394.372 340.09 463.47 340.09H623.337C630.192 340.09 635.749 345.647 635.749 352.502V577.904C635.749 584.759 630.192 590.316 623.337 590.316H350.769C343.914 590.316 338.357 584.759 338.357 577.904V465.203Z" fill="white" stroke="black" stroke-width="42.6973" mask="url(#path-5-inside-2_2245_198)"/>
+<circle cx="487.304" cy="465.206" r="84.4858" fill="white" stroke="black" stroke-width="20.6904"/>
+<circle cx="680.027" cy="68.6057" r="61.1214" fill="white" stroke="black" stroke-width="14.9685"/>
+<circle cx="486.615" cy="465.206" r="41.2359" fill="white" stroke="black" stroke-width="20.9803"/>
+<circle cx="679.528" cy="68.6058" r="29.8321" fill="white" stroke="black" stroke-width="15.1782"/>
+<path d="M915.268 119.652V351.012" stroke="black" stroke-width="21.7747"/>
+<circle cx="917.005" cy="398.426" r="27.5176" fill="white" stroke="black" stroke-width="14.9685"/>
+<path d="M969.136 351.012H865.372V416.051L895.657 476.374H941.83L969.136 416.051V351.012Z" stroke="black" stroke-width="12.9085"/>
+</svg>
